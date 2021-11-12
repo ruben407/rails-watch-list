@@ -1,2 +1,7 @@
 <h2><%= @list.name %></h2>
-<%= link_to "Add a movie!", new_list_bookmark_path(@list.id) %>
+<% @list.bookmarks.each do |bookmark| %>
+<li>Movie:<%= bookmark.movie.title %></li>
+<p>Comment:<%= bookmark.comment %></p>
+<% end %>
+<div><%= link_to "Add a movie!", new_list_bookmark_path(@list.id) %></div>
+<div><%= link_to "Back to homepage", root_path %></div>
