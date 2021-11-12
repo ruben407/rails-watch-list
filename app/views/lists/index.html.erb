@@ -1,5 +1,7 @@
 <h1>Genres:</h1>
 <div><% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
+  <h3><%= link_to list.name, list_path(list) %></h3>
+  <%= link_to "Delete List", lit_path(list.id) %>
   <% end %>
+  <%= link_to "Create new Genre", new_list_path %>
 </div>
